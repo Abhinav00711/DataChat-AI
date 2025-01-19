@@ -1,2 +1,4 @@
 ragenv
 .env
+logs
+__pycache__
