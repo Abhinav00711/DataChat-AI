@@ -1,0 +1,58 @@
+
+# Abhinav Rathi - Portfolio Data
+
+## Personal Details
+- Name: Abhinav Rathi
+- Email: rathiabhinav01@gmail.com
+- Phone: +91 9831960055
+- LinkedIn: https://linkedin.com/in/rathiabhinav01
+- Portfolio: https://abhinav00711.github.io/abhinavrathi/
+- GitHub: https://github.com/Abhinav00711
+
+## Education
+1. **Master of Computer Applications (MCA)** - Christ University, Bangalore (CGPA: 8.6/10)
+   - Core Committee Member, GATEWAYS National Science Fest.
+   - Competitive Programming Lead, GDSC.
+   - Published Research: Multimodal Meeting Analysis (ICCICT 2024).
+   - Runner-Up in Intel OneAPI hackathon.
+
+2. **Bachelor of Computer Applications (BCA)** - Christ University, Bangalore (CGPA: 9.55/10)
+   - National Winner of The Big Bot League 3 hackathon.
+   - Placement Coordinator, increasing campus recruitment by 5%.
+   - Certifications: AWS Academy Graduate, Microsoft Security Fundamentals.
+
+## Work Experience
+1. **Senior Associate (ML Engineer)** - Athena Education
+   - Engineered ML solutions for diverse real-world challenges.
+   - Improved scalability with AWS and FastAPI.
+   - Enhanced user engagement by 20% using Streamlit and Flask.
+
+2. **Application Developer Intern** - BNP Paribas
+   - Developed ML models with 90% accuracy for equity trading predictions.
+   - Built an interactive Django-based analytics dashboard.
+
+3. **Android Developer Intern** - HIH7 Webtech Pvt Ltd
+   - Boosted user engagement by 30% through UI improvements.
+   - Conducted customer review sessions for feature enhancements.
+
+4. **Android Developer Intern** - Revmeup
+   - Reduced network errors by 20%.
+   - Enhanced app performance with Firebase and optimized APIs.
+
+## Skills
+- **AI/ML Techniques**: Deep Learning, Computer Vision, NLP
+- **Frameworks**: TensorFlow, PyTorch, Keras, MediaPipe
+- **Tools**: LangChain, MLflow, FastAPI, AWS, Streamlit
+- **Languages**: Java, Python, C, JavaScript, Dart
+- **Databases**: MySQL, PostgreSQL, Firebase
+- **Soft Skills**: Team Leadership, Critical Thinking, Decision-Making
+
+## Certifications
+- Creating an Interactive Story with Flutter
+- Problem Solving Using Computational Thinking
+- JavaScript Algorithms and Data Structures
+
+## Extracurricular Activities
+- Award of Excellence in Zeal Life Skills Training Program.
+- 5th Kyu (Purple Belt) in Seishinkai Shito-Ryu Karate.
+- Competed in National Karate Championships.
