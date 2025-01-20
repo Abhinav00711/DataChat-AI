@@ -137,7 +137,7 @@ st.markdown(
     </style>
     <div class="footer">
         <hr>
-        © 2025 DataChat AI • <a href="mailto:rathiabhinav01@gmail.com" target="_blank">Contact Support</a> • <a href="#" target="_blank">Documentation</a>
+        © 2025 DataChat AI • <a href="mailto:rathiabhinav01@gmail.com" target="_blank">Contact Support</a> • <a href="https://github.com/Abhinav00711/DataChat-AI" target="_blank">Documentation</a>
     </div>
     """,
     unsafe_allow_html=True
