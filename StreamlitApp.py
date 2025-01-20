@@ -86,15 +86,25 @@ def reload_query_engine():
     if st.session_state["uploaded_docs"]:
         st.session_state["query_engine"] = load_query_engine(st.session_state["uploaded_docs"])
 
+# Initialize reset_session in session state if not already done
+if "reset_session" not in st.session_state:
+    st.session_state["reset_session"] = False
+
 # Enhanced File Uploader
 st.markdown("### 📂 Upload Your Documents")
-if uploaded_docs := st.file_uploader(
+if st.session_state["reset_session"]:
+    st.session_state["uploaded_docs"] = None  # Reset uploaded_docs state
+    st.session_state["reset_session"] = False  # Reset the flag
+
+uploaded_docs = st.file_uploader(
     "Supported formats: PDF, TXT, DOCX",
     type=["pdf", "txt", "docx"],
     accept_multiple_files=True,
     on_change=reload_query_engine,
     key="uploaded_docs"
-):
+)
+
+if uploaded_docs:
     with st.spinner("Uploading and processing documents..."):
         st.session_state["query_engine"] = load_query_engine(uploaded_docs)
     st.success("Documents uploaded and processed successfully!")
@@ -103,9 +113,10 @@ if uploaded_docs := st.file_uploader(
 st.markdown("### 🗑️ Manage Your Session")
 if st.button("Clear History"):
     st.session_state["chat_history"] = []
-    st.session_state["uploaded_docs"] = None
+    st.session_state["reset_session"] = True  # Set the reset flag
     st.session_state["query_engine"] = None
     st.success("Chat history and uploaded documents have been cleared!")
+
 
 # Chat Interface
 if st.session_state["query_engine"]:
