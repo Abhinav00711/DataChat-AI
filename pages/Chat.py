@@ -30,8 +30,10 @@ if "reset_session" not in st.session_state:
 # Enhanced File Uploader
 st.markdown("### 📂 Upload Your Documents")
 if st.session_state["reset_session"]:
-    st.session_state["uploaded_docs"] = None  # Reset uploaded_docs state
-    st.session_state["reset_session"] = False  # Reset the flag
+    # Clear the uploaded_docs indirectly by reinitializing the widget
+    st.session_state.pop("uploaded_docs", None)  # Remove the key if it exists
+    st.session_state["reset_session"] = False
+
 
 uploaded_docs = st.file_uploader(
     "Supported formats: PDF, TXT, DOCX",
