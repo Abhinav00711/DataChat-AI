@@ -88,15 +88,26 @@ def reload_query_engine():
 
 # Enhanced File Uploader
 st.markdown("### 📂 Upload Your Documents")
-uploaded_docs = st.file_uploader(
+if uploaded_docs := st.file_uploader(
     "Supported formats: PDF, TXT, DOCX",
     type=["pdf", "txt", "docx"],
     accept_multiple_files=True,
     on_change=reload_query_engine,
     key="uploaded_docs"
-)
+):
+    with st.spinner("Uploading and processing documents..."):
+        st.session_state["query_engine"] = load_query_engine(uploaded_docs)
+    st.success("Documents uploaded and processed successfully!")
 
-# Chat interface
+# Clear History Button
+st.markdown("### 🗑️ Manage Your Session")
+if st.button("Clear History"):
+    st.session_state["chat_history"] = []
+    st.session_state["uploaded_docs"] = None
+    st.session_state["query_engine"] = None
+    st.success("Chat history and uploaded documents have been cleared!")
+
+# Chat Interface
 if st.session_state["query_engine"]:
     st.subheader("💬 Chat with Your Documents")
 
@@ -104,20 +115,12 @@ if st.session_state["query_engine"]:
         st.chat_message(message["role"]).write(message["content"])
 
     if user_message := st.chat_input("Type your question"):
-        # Add user message to the chat history
         st.session_state["chat_history"].append({"role": "user", "content": user_message})
-
         st.chat_message("user").write(user_message)
-        
-        # Get the response from the query engine
         with st.spinner("Processing..."):
             response = st.session_state["query_engine"].query(user_message)
             bot_message = response.response
-
-        # Add bot response to the chat history
         st.session_state["chat_history"].append({"role": "assistant", "content": bot_message})
-        
-        # Display the latest message
         st.chat_message("ai").write(bot_message)
 
 # Centered Footer Section
