@@ -22,15 +22,58 @@ st.set_page_config(
 # Header with logo and introduction
 col1, col2 = st.columns([1, 4],vertical_alignment="center")
 col1.image("logo.png", width=200)
-col2.title("DataChat AI")
-col2.subheader("Bringing Your Documents to Life")
-st.write(
+col2.markdown(
     """
-    Welcome to **DataChat AI**, your intelligent assistant for extracting valuable insights from your documents. 
-    Upload your files, ask questions, and interact with your data in real time. Perfect for students, researchers, 
-    and professionals seeking a smarter way to engage with their information.
+    ## **DataChat AI**  
+    ### *Bringing Your Documents to Life*
+    Unleash insights from your documents with AI-powered chat.
+    Upload, question, and discover effortlessly.
     """
 )
+st.markdown(
+    """
+    <style>
+        .welcome-header {
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+        }
+        .welcome-subheader {
+            font-size: 20px;
+            color: #555;
+            line-height: 1.6;
+        }
+        .welcome-highlight {
+            font-size: 24px;
+            font-weight: bold;
+            color: #007BFF;
+            margin-top: 20px;
+        }
+    </style>
+
+    <div class="welcome-header">Welcome to <span style="color: #007BFF;">DataChat AI</span> – Your Intelligent Partner in Document Exploration and Insight Discovery!</div>
+    <div class="welcome-subheader">
+        🧠 <b>Transform How You Interact with Information</b><br>
+        Say goodbye to hours of manual searching and sifting through endless pages. With <b>DataChat AI</b>, you can effortlessly extract valuable insights from your documents in real time.
+        <br><br>
+        🚀 <b>Unlock the Power of AI at Your Fingertips</b><br>
+        Whether you're a student striving to ace your research, a professional streamlining workflows, or a curious mind exploring new ideas, our advanced tools powered by <b>Llama Index</b> and <b>Gemini</b> are here to help.
+        <br><br>
+        🌟 <b>Why Choose DataChat AI?</b><br>
+        - 📂 <b>Smart Document Management</b>: Upload multiple files and let AI do the heavy lifting.<br>
+        - 🔍 <b>Real-Time Interaction</b>: Ask questions, analyze data, and uncover insights in seconds.<br>
+        - 🤝 <b>Tailored for Everyone</b>: Perfect for researchers, educators, professionals, and beyond!
+        <br><br>
+        ✨ <b>How It Works</b><br>
+        1. Upload your documents (PDF or TXT).<br>
+        2. Ask questions or dive deep into specific topics.<br>
+        3. Experience personalized, real-time answers powered by state-of-the-art AI.
+    </div>
+    <div class="welcome-highlight">Ready to revolutionize your workflow?<br>Start your journey with <b>DataChat AI</b> today – because smarter insights lead to smarter decisions.</div>
+    """,
+    unsafe_allow_html=True
+)
+
 
 # Session state to store the query engine and chat history
 if "query_engine" not in st.session_state:
@@ -43,10 +86,10 @@ def reload_query_engine():
     if st.session_state["uploaded_docs"]:
         st.session_state["query_engine"] = load_query_engine(st.session_state["uploaded_docs"])
 
-# File uploader section
-st.markdown("### Upload Your Documents")
+# Enhanced File Uploader
+st.markdown("### 📂 Upload Your Documents")
 uploaded_docs = st.file_uploader(
-    "Upload one or more documents",
+    "Supported formats: PDF, TXT",
     type=["pdf", "txt"],
     accept_multiple_files=True,
     on_change=reload_query_engine,
@@ -55,7 +98,7 @@ uploaded_docs = st.file_uploader(
 
 # Chat interface
 if st.session_state["query_engine"]:
-    st.subheader("Chat with your documents")
+    st.subheader("💬 Chat with Your Documents")
 
     for message in st.session_state["chat_history"]:
         st.chat_message(message["role"]).write(message["content"])
@@ -76,3 +119,26 @@ if st.session_state["query_engine"]:
         
         # Display the latest message
         st.chat_message("ai").write(bot_message)
+
+# Centered Footer Section
+st.markdown(
+    """
+    <style>
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            background-color: #f9f9f9;
+            padding: 10px 0;
+            font-size: 14px;
+            color: #333;
+        }
+    </style>
+    <div class="footer">
+        <hr>
+        © 2025 DataChat AI • <a href="mailto:rathiabhinav01@gmail.com" target="_blank">Contact Support</a> • <a href="#" target="_blank">Documentation</a>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
