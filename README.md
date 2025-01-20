@@ -12,10 +12,11 @@
    - [Prerequisites](#prerequisites)
    - [Installation](#installation)
 3. [Usage](#usage)
-4. [Project Structure](#project-structure)
-5. [Technologies Used](#technologies-used)
-6. [Contributing](#contributing)
-7. [License](#license)
+4. [Access the Deployed Application](#access-the-deployed-application)
+5. [Project Structure](#project-structure)
+6. [Technologies Used](#technologies-used)
+7. [Contributing](#contributing)
+8. [License](#license)
 
 ---
 
@@ -73,6 +74,12 @@ Ensure you have the following installed on your system:
 3. Use the chat interface to ask questions about the content.
 4. View responses generated in real time.
 5. Manage your session using the provided controls (e.g., clear history).
+
+---
+
+## Access the Deployed Application
+
+Visit the live application: [DataChat AI](https://datachatai.streamlit.app/)
 
 ---
 
