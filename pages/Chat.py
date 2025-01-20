@@ -3,6 +3,13 @@ from utils.data_ingestion import load_data
 from utils.embedding import download_gemini_embedding
 from utils.model_api import load_model
 
+# Streamlit app configuration
+st.set_page_config(
+    page_title="DataChat AI",
+    page_icon="logo.png",
+    layout="wide"
+)
+
 gemini_api_key = st.secrets["GEMINI_API_KEY"]
 
 # Function to load the query engine
