@@ -1,19 +1,9 @@
-import os
-from dotenv import load_dotenv
 import sys
-
 from llama_index.llms.gemini import Gemini
-import google.generativeai as genai
-from exception import customexception
-from logger import logging
+from utils.exception import customexception
+from utils.logger import logging
 
-load_dotenv()
-
-GOOGLE_API_KEY=os.getenv("GOOGLE_API_KEY")
-
-genai.configure(api_key=GOOGLE_API_KEY)
-
-def load_model():
+def load_model(api_key):
     
     """
     Loads a Gemini-Pro model for natural language processing.
@@ -23,7 +13,7 @@ def load_model():
     """
     try:
         logging.info("Model loading started...")
-        model=Gemini(models='models/gemini-1.5-pro',api_key=GOOGLE_API_KEY)
+        model=Gemini(models='models/gemini-1.5-pro',api_key=api_key)
         logging.info("Model loading completed...")
         return model
     except Exception as e:

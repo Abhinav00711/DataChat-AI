@@ -2,3 +2,4 @@ ragenv
 .env
 logs
 __pycache__
+secrets.toml

@@ -2,12 +2,9 @@ from llama_index.core import VectorStoreIndex
 from llama_index.core import Settings
 from llama_index.embeddings.gemini import GeminiEmbedding
 
-from QA.data_ingestion import load_data
-from QA.model_api import load_model
-
 import sys
-from exception import customexception
-from logger import logging
+from utils.exception import customexception
+from utils.logger import logging
 
 def download_gemini_embedding(model,document):
     """
@@ -27,7 +24,7 @@ def download_gemini_embedding(model,document):
         
         logging.info("Indexing started...")
         index = VectorStoreIndex.from_documents(document, llm=model, embed_model=gemini_embed_model)
-        index.storage_context.persist()
+        # index.storage_context.persist()
         
         logging.info("Query engine creation started...")
         query_engine = index.as_query_engine()
