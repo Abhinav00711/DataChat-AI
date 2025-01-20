@@ -55,17 +55,15 @@ if uploaded_docs:
         st.session_state["query_engine"] = load_query_engine(uploaded_docs)
     st.success("Documents uploaded and processed successfully!")
 
-# Clear History Button
-st.markdown("### 🗑️ Manage Your Session")
-if st.button("Clear History"):
-    st.session_state["chat_history"] = []
-    st.session_state["reset_session"] = True  # Set the reset flag
-    st.session_state["query_engine"] = None
-    st.success("Chat history and uploaded documents have been cleared!")
-
-
 # Chat Interface
 if st.session_state["query_engine"]:
+    # Clear History Button
+    st.markdown("### 🗑️ Manage Your Session")
+    if st.button("Clear History"):
+        st.session_state["chat_history"] = []
+        st.session_state["reset_session"] = True  # Set the reset flag
+        st.session_state["query_engine"] = None
+        st.success("Chat history and uploaded documents have been cleared!")
     st.subheader("💬 Chat with Your Documents")
 
     for message in st.session_state["chat_history"]:
