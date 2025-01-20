@@ -65,7 +65,7 @@ st.markdown(
         - 🤝 <b>Tailored for Everyone</b>: Perfect for researchers, educators, professionals, and beyond!
         <br><br>
         ✨ <b>How It Works</b><br>
-        1. Upload your documents (PDF or TXT).<br>
+        1. Upload your documents (PDF, TXT or DOCX).<br>
         2. Ask questions or dive deep into specific topics.<br>
         3. Experience personalized, real-time answers powered by state-of-the-art AI.
     </div>
@@ -89,8 +89,8 @@ def reload_query_engine():
 # Enhanced File Uploader
 st.markdown("### 📂 Upload Your Documents")
 uploaded_docs = st.file_uploader(
-    "Supported formats: PDF, TXT",
-    type=["pdf", "txt"],
+    "Supported formats: PDF, TXT, DOCX",
+    type=["pdf", "txt", "docx"],
     accept_multiple_files=True,
     on_change=reload_query_engine,
     key="uploaded_docs"

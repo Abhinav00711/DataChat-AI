@@ -3,3 +3,4 @@ llama-index-llms-gemini
 pypdf
 llama-index-embeddings-gemini
 streamlit
+docx2txt
