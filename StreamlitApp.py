@@ -89,8 +89,8 @@ def reload_query_engine():
 # Enhanced File Uploader
 st.markdown("### 📂 Upload Your Documents")
 uploaded_docs = st.file_uploader(
-    "Supported formats: PDF, TXT",
-    type=["pdf", "txt"],
+    "Supported formats: PDF, TXT, DOC",
+    type=["pdf", "txt", "docx", "doc"],
     accept_multiple_files=True,
     on_change=reload_query_engine,
     key="uploaded_docs"
